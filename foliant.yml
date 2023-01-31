@@ -1,0 +1,19 @@
+title: foliant-russian
+
+chapters:
+  - index.md
+
+backend_config:
+    mkdocs:
+        mkdocs.yml: 
+          theme:
+              name: material
+          markdown_extensions:
+              - admonition
+              - pymdownx.details
+
+    pandoc: 
+        template: !path templates/docs.tex
+        params:
+            pdf_engine: xelatex
+            listings: true

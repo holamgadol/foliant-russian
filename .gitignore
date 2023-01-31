@@ -1,0 +1,5 @@
+*.pdf
+*.mkdocs
+*.docx
+.logs
+.pandoccache
