@@ -8,9 +8,11 @@ backend_config:
         mkdocs.yml: 
           theme:
               name: material
-          markdown_extensions:
-              - admonition
-              - pymdownx.details
+          plugins:
+            - search:
+                lang:
+                  - ru
+                  - en
 
     pandoc: 
         template: !path templates/docs.tex
