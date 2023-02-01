@@ -8,7 +8,11 @@ backend_config:
     mkdocs:
         mkdocs.yml: 
           theme:
+              custom_dir: !path ./theme/
               name: material
+              logo: assets/images/logo.svg
+              favicon: assets/images/icon.ico
+              language: ru
           plugins:
             - search:
                 lang:

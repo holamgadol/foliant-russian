@@ -4,3 +4,4 @@
 .logs
 .pandoccache
 *.tex
+**/.DS_Store
