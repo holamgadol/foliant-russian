@@ -6,6 +6,9 @@ all:
 pdf:
 	docker-compose run --rm foliant make pdf --with pandoc --logs .logs
 
+tex:
+	docker-compose run --rm foliant make tex --logs .logs
+
 docx:
 	docker-compose run --rm foliant make docx --logs .logs
 

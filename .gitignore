@@ -3,3 +3,4 @@
 *.docx
 .logs
 .pandoccache
+*.tex
