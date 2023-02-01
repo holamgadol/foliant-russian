@@ -1,7 +1,8 @@
-title: foliant-russian
+title: &title Шаблонный Фолиант-документ
 
 chapters:
   - index.md
+  - listings.md
 
 backend_config:
     mkdocs:
@@ -16,6 +17,16 @@ backend_config:
 
     pandoc: 
         template: !path templates/docs.tex
+        vars:
+            title_page: true                # добавить титульный лист
+            title: *title                   # добавить заголовок на титульный лист
+            subtitle: На русском языке      # добавить подзаголовок на титульный лист
+            logo: !path templates/logo.png  # добавить логотип на титульный лист
+            date: true                      # добавить дату в колонтитул
+            russian: true                   # использовать русские служебные слова
+            english: false                  # не использовать английский служебные слова
+            toc: true                       # добавить содержание
+            tof: true                       # добавить список иллюстраций
         params:
             pdf_engine: xelatex
             listings: true

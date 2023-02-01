@@ -499,17 +499,6 @@ $endif$
 %\renewcommand{\subsubsectionmark}[1]{\markright{\thesubsubsection\ #1}}
 \fancypagestyle{titlefooter}{%
 \fancyhf{}
-$if(russian)$
-  $if(restream)$
-      \fancyfoot[L]{\textsc{\fontsize{12}{15}\headingfontlight\nohyphens{\pageref{LastPage} страниц, АО «Рестрим»
-        $if(date)$
-         \\[0.1cm] Версия документа $version$-\today
-        $else$
-        , $year$ год
-        $endif$
-      }}}
-  $endif$
-$endif$
 }
 \makeatletter
 \newcommand{\rightorleftmark}{%
@@ -588,7 +577,23 @@ rightmargin=1em
 \lefthyphenmin=2
 \sloppy % плохо для типографики
 
-
+$if(title_page)$
+    \begin{titlepage}
+        $if(logo)$
+            \includegraphics[scale=0.15]{$logo$}
+        $endif$
+        \vspace*{\fill}
+        \vspace{-5cm}
+        $if(title)$
+            \textsc{\fontsize{28}{30}\headingfont\RaggedRight\nohyphens{$title$}}\\[0.5cm]
+            $if(subtitle)$
+                \fontsize{22}{30}\headingfontlight\RaggedRight\nohyphens{$subtitle$}\\
+            $endif$
+        $endif$
+        \vfill
+        \thispagestyle{titlefooter}
+    \end{titlepage}
+$endif$
 
 $if(toc)$
   \tableofcontents
